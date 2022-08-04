@@ -1,0 +1,147 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	display: flex;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+}
+
+/*form data*/
+.form-data h1 {
+	margin-bottom: 25px;
+	font-size: 21px;
+	color: white;
+}
+
+.form-data {
+	width: 25%;
+	height: 100%;
+	background-color: #273c75;
+	padding: 30px 20px;
+}
+
+.form-data form {
+	width: 100%;
+	/*background-color: lightgrey;*/
+	padding: 20px 0;
+	display: flex;
+	flex-direction: column;
+	/*align-items: center;*/
+	color: white;
+}
+
+.form-data input {
+	border: 1px solid lightgrey;
+	width: 100%;
+	height: 35px;
+	margin-top: 6px;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+.form-data select {
+	border: 1px solid lightgrey;
+	width: 100%;
+	height: 35px;
+	margin-top: 3px;
+	padding: 5px;
+}
+
+.form-data .nama-pemesan, .alamat, .jenis-penerbangan {
+	margin-bottom: 20px;
+}
+
+.form-data .btn-simpan {
+	margin-top: 30px;
+	border: none;
+}
+
+.form-data .btn-simpan button {
+	width: 100%;
+	padding: 5px;
+	height: 35px;
+	cursor: pointer;
+}
+
+.form-data .logout a {
+	color: white;
+	text-decoration: none;
+	position: absolute;
+	bottom: 18px;
+	font-size: 15px;
+}
+
+.form-data .logout a:hover {
+	text-decoration: underline;
+}
+
+/*table data*/
+.tabel-data {
+	width: 75%;
+	 /*background-color: #f5f6fa; */
+	padding: 30px 20px;
+}
+
+.tabel-data .header {
+	/* background-color: lightblue; */
+	display: flex;
+	justify-content: space-between;
+	margin-bottom: 8px;
+}
+
+.tabel-data .header h2 {
+	font-size: 20px;
+	text-transform: uppercase;
+	margin-bottom: 20px;
+}
+
+.tabel-data .header .search input {
+	border: 1px solid black;
+	width: 220px;
+	height: 28px;
+	padding: 5px;
+	box-sizing: border-box;
+}
+
+.tabel-data .header .search button {
+	height: 28px;
+	padding: 5px;
+	cursor: pointer;
+	box-sizing: border-box;
+}
+
+.tabel-data table th, td {
+	padding: 3px 5px;
+	font-size: 15px;
+	border-color: black;
+}
+
+.tabel-data button {
+	width: 60px;
+	padding: 5px;
+	cursor: pointer;
+	border: none;
+}
+
+.tabel-data button:hover {
+	background-color: lightgrey;
+}
+
+.tabel-data .list-tabel {
+	/*background-color: lightgrey;*/
+	height: 93%;
+	overflow-y: auto;
+}
+
+.tabel-data .paginasi {
+	/*background-color: lightblue;*/
+	position: absolute;
+	bottom: 110px;
+	right: 20px;
+}

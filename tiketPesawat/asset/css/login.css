@@ -1,0 +1,33 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+.head {
+	color: #273c75;
+}
+
+.container form {
+	background-color: #273c75;
+	width: 33%;
+	color: white;
+}
+
+.container form .input {
+	width: 75%;
+	margin: auto;
+}
+
+.container form .regis {
+	margin-top: 43px;
+}
+
+.container form .regis .btn {
+	width: 50%;
+	transition: 0.1s;
+}
+
+.container form .regis .btn:hover {
+	background-color: lightgrey;
+}
+
