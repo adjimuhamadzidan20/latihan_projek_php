@@ -1,6 +1,13 @@
 <?php  
 	require 'config/koneksi_database.php';
 
+	// session
+	session_start();
+	if (isset($_SESSION['login_page'])) {
+		header('Location: index.php');
+		exit;
+	}
+
 	if (isset($_POST['login'])) {
 		$user = $_POST['username'];
 		$pass = $_POST['password'];
@@ -12,9 +19,11 @@
 		if (mysqli_num_rows($hasil) === 1) {
 			$data = mysqli_fetch_assoc($hasil);
 			if (password_hash($pass, $row['password'])) {
+				// set session
+				$_SESSION['login_page'] = true;
 							
 				// masuk ke hal dashbord
-				header('Location: tiketPesawat.php');
+				header('Location: index.php');
 				exit;
 			}
 

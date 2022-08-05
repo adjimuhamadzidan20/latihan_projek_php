@@ -2,6 +2,12 @@
 	// koneksi
 	require 'config/koneksi_database.php';
 
+	session_start();
+	if (!isset($_SESSION['login_page'])) {
+		header('Location: login_user.php');
+		exit;
+	}
+
 	// show all data
 	function show_data($query) {
 		global $koneksi;
@@ -125,7 +131,7 @@
 				</div>
 				<div class="btn-opsi">
 					<button type="submit" name="edit-data" onclick="return confirm('Edit data?');">Edit</button>
-					<a href="tiketPesawat.php"><button type="button">Kembali</button></a>
+					<a href="index.php"><button type="button">Kembali</button></a>
 				</div>
 			</form>
 		</div>
