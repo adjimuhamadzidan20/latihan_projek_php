@@ -6,7 +6,7 @@
 	if (hapusData($id) > 0) {
 		echo "
 			<script>
-				alert('data berhasil di delete');
+				alert('Gambar berhasil di delete');
 				document.location.href = 'list_pict.php';
 			</script>
 		";
@@ -15,7 +15,7 @@
 	else {
 		echo "
 			<script>
-				alert('data gagal di delete');
+				alert('Gambar gagal di delete');
 				document.location.href = 'list_pict.php';
 			</script>
 		";

@@ -31,10 +31,9 @@
 		else {
 
 			$query = "INSERT INTO data_gallery VALUES ('','$namaGambar', '$gambar', '$caption')";
-
 			mysqli_query($koneksi, $query);
 
-			echo "Gambar berhasil terupload!";
+			echo "<script>alert('Gambar berhasil terupload!');</script>";
 		}
 	}
 
@@ -48,39 +47,32 @@
 
 		// ketika gambar belum diklik upload
 		if ($errorFile === 4) {
-			echo "gambar belum diupload!";
-
+			echo "<script>alert('Gambar belum diupload!');</script>";
 			return false;
 		}
 
-		$jenisExtFile = ['jpg', 'jpeg', 'png'];
-		$extFile = explode('.', $nameFile);
-		$extFile = strtolower(end($extFile));
+		$formatExt = pathinfo($nameFile, PATHINFO_EXTENSION);
+		if ($formatExt == 'jpg' || $formatExt == 'jpeg' || $formatExt == 'png') {
+			// ukuran file max 2 mb
+			if ($sizeFile > 2000000) {
+				echo "<script>alert('Ukuran file max 2MB!');</script>";
+				return false;
+			}
 
-		// ketika file yang dupload bukan gambar
-		if (!in_array($extFile, $jenisExtFile)) {
-			echo "file yang diupload bukan gambar!";
+			// generate nama file gambar
+			$namaFileGambar = uniqid();
+			$namaFileGambar .= '.';
+			$namaFileGambar .= $formatExt;
 
+			// upload file gambar berfungsi 
+			move_uploaded_file($placeFile, 'gambar/' . $namaFileGambar);
+			return $namaFileGambar;
+		} 
+
+		else {
+			echo "<script>alert('file yang diupload bukan gambar!');</script>";
 			return false;
 		}
-
-		// ukuran file max 2 mb
-		if ($sizeFile > 2000000) {
-			echo "ukuran file max 2MB!";
-
-			return false;
-		}
-
-		// generate nama file gambar
-		$namaFileGambar = uniqid();
-		$namaFileGambar .= '.';
-		$namaFileGambar .= $extFile;
-
-		// upload file gambar berfungsi 
-		move_uploaded_file($placeFile, 'gambar/' . $namaFileGambar);
-
-		return $namaFileGambar;
-
 	}
 
 	// mengubah data
@@ -101,7 +93,6 @@
 		}
 
 		$query = "UPDATE data_gallery SET Nama_Gambar = '$namaGambar', Caption = '$caption', Gambar = '$gambar' WHERE ID = $idGambar";
-
 		mysqli_query($koneksi, $query);
 
 		return mysqli_affected_rows($koneksi);
@@ -112,7 +103,6 @@
 		global $koneksi;
 
 		$query = "DELETE FROM data_gallery WHERE ID = $data";
-
 		mysqli_query($koneksi, $query);
 
 		return mysqli_affected_rows($koneksi);

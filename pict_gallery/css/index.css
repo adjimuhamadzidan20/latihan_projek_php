@@ -1,0 +1,29 @@
+header .title {
+	text-align: center;
+	margin-top: 30px;
+}
+
+header .nav {
+	display: flex;
+	justify-content: space-evenly;
+	margin: auto;
+	margin-bottom: 12px;
+}
+
+main {
+	margin-bottom: 80px;
+}
+
+main .container {
+	max-width: 720px;
+}
+
+main .container .inputan {
+	margin: auto;
+	border: 1px solid lightgrey;
+	padding: 21px 25px;
+}
+
+.inputan form .upload-button button {
+	width: 150px;
+}

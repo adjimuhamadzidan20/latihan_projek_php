@@ -1,0 +1,41 @@
+header .title {
+	text-align: center;
+	margin-top: 30px;
+}
+
+header .nav {
+	/*background-color: lightgrey;*/
+	display: flex;
+	justify-content: space-evenly;
+	margin: auto;
+	margin-bottom: 12px;
+}
+
+main {
+	margin-bottom: 100px;
+}
+
+main .container {
+	/*background-color: lightblue;*/
+	max-width: 80%;
+}
+
+main .container .gallery {
+	/*background-color: lightgrey;*/
+	border: 1px solid lightgrey;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+	padding: 8px;
+	justify-content: center;
+}
+
+main .container .pict {
+	margin: 5px;
+}
+
+main .container .figure img {
+	width: 220px;
+	height: 220px;		
+	object-fit: cover;
+}
